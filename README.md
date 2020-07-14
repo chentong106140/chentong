@@ -1,6 +1,6 @@
 # chentong
 测试发布到Heroku
-
+[参考地址](https://github.com/alsotang/node-lessons/tree/master/lesson12)
 
 
 ``` javascript

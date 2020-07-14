@@ -1,0 +1,27 @@
+{
+  "name": "chentong",
+  "version": "1.0.0",
+  "description": "测试发布到Heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentong106140/chentong.git"
+  },
+  "keywords": [
+    "chentong"
+  ],
+  "author": "chentong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chentong106140/chentong/issues"
+  },
+  "homepage": "https://github.com/chentong106140/chentong#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "superagent": "^5.3.1"
+  }
+}

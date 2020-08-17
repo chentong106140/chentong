@@ -6,6 +6,13 @@ var cheerio = require('cheerio');
 // 建立 express 实例
 var app = express();
 
+var mongo = require("./mongo")
+
+
+
+
+
+
 app.get('/', function (req, res, next) {
   // 用 superagent 去抓取 https://cnodejs.org/ 的内容
   superagent.get('https://cnodejs.org/').end(function (err, sres) {
@@ -30,6 +37,12 @@ app.get('/', function (req, res, next) {
 
         res.send(items);
       });
+});
+
+app.get('/mongo/findAll', function (req, res, next) {
+    mongo.findAll((arr)=>{
+        res.send(arr);
+    })
 });
 
 app.listen(process.env.PORT || 5000, function (req, res) {

@@ -1,14 +1,16 @@
 # chentong
-测试发布到Heroku
+## 测试发布到Heroku，主要是验证heroku的github发布模式
 [参考地址](https://github.com/alsotang/node-lessons/tree/master/lesson12)
 
+1. 爬虫测试地址：https://chentong.herokuapp.com/
+2. mongoDB查询地址：https://chentong.herokuapp.com/mongo/findAll
 
 ``` javascript
 
 //npm init 这个命令的作用就是帮我们互动式地生成一份最简单的 package.json 文件，init 是 initialize 的意思，初始化。
 cnpm init
 
-cnpm install express superagent cheerio --save
+cnpm install express superagent cheerio mongodb  --save
 
  touch index.js
 

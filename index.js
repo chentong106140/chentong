@@ -8,7 +8,10 @@ var app = express();
 
 var mongo = require("./mongo")
 
-app.use((req, res, next) => {
+
+
+
+app.all('*',function (req, res, next) {
     //res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization,Origin,Accept,X-Requested-With');
@@ -22,6 +25,8 @@ app.use((req, res, next) => {
         next();
     }
 });
+
+
 
 app.get('/', function (req, res, next) {
   // 用 superagent 去抓取 https://cnodejs.org/ 的内容

@@ -11,7 +11,16 @@ var mongo = require("./mongo")
 
 
 
-
+app.all('',function (req, res, next) {
+    //res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization,Origin,Accept,X-Requested-With');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('X-Powered-By', '陈通');
+    res.header('Content-Type', 'application/json;charset=utf-8');
+    next();
+});
 
 app.get('/', function (req, res, next) {
   // 用 superagent 去抓取 https://cnodejs.org/ 的内容
@@ -41,22 +50,6 @@ app.get('/', function (req, res, next) {
 
 app.get('/mongo/findAll', function (req, res, next) {
     mongo.findAll((arr)=>{
-        
-        
-
-
-        //res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-        res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization,Origin,Accept,X-Requested-With');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-        res.header('Access-Control-Allow-Credentials', true);
-        res.header('X-Powered-By', '3.2.1');
-        res.header('Content-Type', 'application/json;charset=utf-8');
-        /*if (req.method === 'OPTIONS') {
-            res.send(arr);
-        } else {
-            next();
-        }*/
         res.send(arr);
     })
 });

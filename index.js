@@ -8,10 +8,7 @@ var app = express();
 
 var mongo = require("./mongo")
 
-
-
-
-app.all('',function (req, res, next) {
+app.use((req, res, next) => {
     //res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization,Origin,Accept,X-Requested-With');
@@ -19,7 +16,11 @@ app.all('',function (req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);
     res.header('X-Powered-By', '陈通');
     res.header('Content-Type', 'application/json;charset=utf-8');
-    next();
+    if (req.method == 'OPTIONS') {
+        res.sendStatus(200);
+    } else {
+        next();
+    }
 });
 
 app.get('/', function (req, res, next) {
